@@ -18,6 +18,7 @@
       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
         <docker.image.prefix>dockerniu</docker.image.prefix>
+        <GIT_COMMIT>latest</GIT_COMMIT>
     </properties>
 
     <dependencies>
