@@ -1,4 +1,4 @@
-{
+[{
   "id": "/movieapps/movie-services/user",
   "cmd": null,
   "cpus": 0.3,
@@ -39,4 +39,4 @@
   "env": {
     "SPRING_PROFILES_ACTIVE": "docker"
   }
-}
+}]
