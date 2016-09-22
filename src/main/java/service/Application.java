@@ -29,7 +29,7 @@ public class Application extends Neo4jConfiguration {
 
     // Used to bootstrap the Neo4j database with demo data
    // @Value("${aws.s3.url}")
-    String datasetUrl="file:///users.csv";
+    String datasetUrl="file://";
 
     @Value("${neo4j.uri}")
     private String url;
