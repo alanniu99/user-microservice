@@ -28,8 +28,8 @@ import service.data.domain.entity.User;
 public class Application extends Neo4jConfiguration {
 
     // Used to bootstrap the Neo4j database with demo data
-    @Value("${aws.s3.url}")
-    String datasetUrl;
+   // @Value("${aws.s3.url}")
+    String datasetUrl="file:///users.csv";
 
     @Value("${neo4j.uri}")
     private String url;
