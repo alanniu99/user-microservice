@@ -2,6 +2,8 @@ package service;
 
 import org.neo4j.graphdb.GraphDatabaseService;
 import org.neo4j.graphdb.factory.GraphDatabaseFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
@@ -27,9 +29,11 @@ import service.data.domain.entity.User;
 @EnableHystrix
 public class Application extends Neo4jConfiguration {
 
+	
+	final Logger logger = LoggerFactory.getLogger(Application.class);
     // Used to bootstrap the Neo4j database with demo data
    // @Value("${aws.s3.url}")
-    String datasetUrl="file://";
+    String datasetUrl="file:///tmp";
 
     @Value("${neo4j.uri}")
     private String url;
@@ -96,8 +100,11 @@ public class Application extends Neo4jConfiguration {
             // Import graph data for users
             String userImport = String.format("LOAD CSV WITH HEADERS FROM \"%s/users.csv\" AS csvLine\n" +
                     "MERGE (user:User:_User { id: csvLine.id, age: toInt(csvLine.age), gender: csvLine.gender, occupation: csvLine.occupation, zipcode: csvLine.zipcode })", datasetUrl);
-
+            try {
             neo4jTemplate().query(userImport, null).finish();
+            }catch(Exception e){
+            	logger.warn(e.getMessage());
+            }
         };
     }
 
