@@ -183,7 +183,9 @@
                         <resource>
                          <targetPath>/</targetPath>
                         <directory>${project.build.resources}</directory>
+                        <includes>
                         <include>static/users.csv</include>
+                        </includes>
                         </resource>
                     </resources>
                 </configuration>
