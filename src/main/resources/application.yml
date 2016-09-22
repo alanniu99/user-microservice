@@ -40,4 +40,4 @@ ribbon:
     enabled: true
 aws:
   s3:
-    url: https://raw.githubusercontent.com/alanniu99/user-microservice/master/src/main/resources/static/
+    url: https://raw.githubusercontent.com/alanniu99/user-microservice/master/src/main/resources/static
