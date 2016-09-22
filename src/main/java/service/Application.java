@@ -32,8 +32,8 @@ public class Application extends Neo4jConfiguration {
 	
 	final Logger logger = LoggerFactory.getLogger(Application.class);
     // Used to bootstrap the Neo4j database with demo data
-   // @Value("${aws.s3.url}")
-    String datasetUrl="file:///tmp";
+   @Value("${aws.s3.url}")
+    String datasetUrl;
 
     @Value("${neo4j.uri}")
     private String url;
