@@ -24,11 +24,6 @@ spring:
   profiles: docker
 server:
   port: 9000
-neo4j:
-  uri: http://neo4jdb:7474/db/data/
-  username: neo4j
-  password: graphdb
-  bootstrap: true
 eureka:
   client:
     serviceUrl:
@@ -40,4 +35,4 @@ ribbon:
     enabled: true
 aws:
   s3:
-    url: https://raw.githubusercontent.com/alanniu99/user-microservice/master/src/main/resources/static
+    url: file:///data

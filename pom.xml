@@ -68,6 +68,7 @@
         <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-neo4j</artifactId>
+            <version>4.1.1.RELEASE</version>
         </dependency>
          <dependency>
             <groupId>org.springframework.data</groupId>
@@ -181,9 +182,9 @@
                             <include>${project.build.finalName}.jar</include>
                         </resource>
                         <resource>
-                         <targetPath>/</targetPath>
-                        <directory>src/main/resources/static</directory>
-                        <include>users.csv</include>
+                        <targetPath>/</targetPath>
+                        <directory>${project.basedir}/src/main/resources/static</directory>
+                        <include>users.csv</include>                        
                         </resource>
                     </resources>
                 </configuration>

@@ -19,7 +19,7 @@ import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.hateoas.Link;
 import org.springframework.hateoas.Resource;
 import org.springframework.hateoas.ResourceProcessor;
-import org.springframework.data.neo4j.rest.SpringCypherRestGraphDatabase;
+
 
 import service.data.domain.entity.User;
 
@@ -82,9 +82,7 @@ public class Application extends Neo4jConfiguration {
     
     @Bean(destroyMethod = "shutdown")
     public GraphDatabaseService graphDatabaseService() {
-       // return new GraphDatabaseFactory().newEmbeddedDatabase("user.db");
-    	setGraphDatabaseService(new SpringCypherRestGraphDatabase(url, username, password));
-    	return getGraphDatabaseService();
+       return new GraphDatabaseFactory().newEmbeddedDatabase("user.db");	
     }
 
     public static void main(String[] args) {
