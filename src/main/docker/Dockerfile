@@ -1,6 +1,6 @@
 FROM java:8
 VOLUME /tmp
-COPY user-microservice-0.1.0.jar app.jar
+ADD user-microservice-0.1.0.jar app.jar
 ADD users.csv /data/
 RUN bash -c 'touch /app.jar'
 EXPOSE 9000

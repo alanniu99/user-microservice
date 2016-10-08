@@ -4,7 +4,6 @@ import org.neo4j.graphdb.GraphDatabaseService;
 import org.neo4j.graphdb.factory.GraphDatabaseFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -35,51 +34,13 @@ public class Application extends Neo4jConfiguration {
    @Value("${aws.s3.url}")
     String datasetUrl;
 
-    @Value("${neo4j.uri}")
-    private String url;
-
-    @Value("${neo4j.username}")
-    private String username;
-
-    @Value("${neo4j.password}")
-    private String password;
-    
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-    
+  
     
     public Application() {
         setBasePackage("service");
     }
 
-    @Autowired(required = true)
-    @Override
-    public void setGraphDatabaseService(GraphDatabaseService graphDatabaseService) {
-        super.setGraphDatabaseService(graphDatabaseService);
-        
-    }
-    
+ 
     @Bean(destroyMethod = "shutdown")
     public GraphDatabaseService graphDatabaseService() {
        return new GraphDatabaseFactory().newEmbeddedDatabase("user.db");	
