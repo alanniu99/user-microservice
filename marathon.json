@@ -1,5 +1,5 @@
 [{
-  "id": "/movieapps/movie-services/user",
+  "id": "/movies-site/user",
   "cmd": null,
   "cpus": 0.3,
   "mem": 1000,
@@ -20,10 +20,6 @@
       ],
       "privileged": false,
       "parameters": [
-        {
-          "key": "hostname",
-          "value": "user"
-        },
         {
           "key": "network",
           "value": "microservice"

@@ -24,15 +24,16 @@ spring:
   profiles: docker
 server:
   port: 9000
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://discovery:8761/eureka/
-  instance:
-    preferIpAddress: true
+#Disable eureka, use docker overlay netwrok replacement
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://discovery:8761/eureka/
+#  instance:
+#    preferIpAddress: true
 ribbon:
   eureka:
-    enabled: true
+    enabled: false
 aws:
   s3:
     url: file:///data
