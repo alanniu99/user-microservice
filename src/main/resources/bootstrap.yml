@@ -13,9 +13,9 @@ spring:
   profiles: docker
   application:
     name: user
-#  cloud:
-#    config:
-#      uri: http://configServer:8888
-#      enabled: false
+  cloud:
+    config:
+      uri: http://configServer:8888
+      enabled: false
 encrypt:
   failOnError: false
